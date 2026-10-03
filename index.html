@@ -6,7 +6,16 @@
 
 <body style="background-color: black;">
   <script src="wasm_exec.js"></script>
-  <script src="script.js"></script>
+  <script>
+    (async () => {
+      const go = new globalThis.Go();
+      go.run((await WebAssembly.instantiateStreaming(
+        fetch("go.wasm"), go.importObject
+      )).instance);
+
+      globalThis.setup();
+    })().catch(console.error);
+  </script>
 </body>
 
 </html>

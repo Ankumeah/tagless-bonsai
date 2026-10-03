@@ -2,6 +2,12 @@
 
 set -eu
 
+if test -n "${CI:-}"; then
+  echo 'CI: true'
+else
+  echo 'CI: false'
+fi
+
 export GOOS=js
 export GOARCH=wasm
 
