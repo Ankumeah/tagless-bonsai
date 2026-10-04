@@ -83,7 +83,7 @@ func setup(this js.Value, args []js.Value) any {
 	favicon := document.Call("createElement", "link")
 	favicon.Set("rel", "icon")
 	favicon.Set("type", "image/x-icon")
-	favicon.Set("href", "/favicon.ico")
+	favicon.Set("href", "favicon.ico")
 
 	title := document.Call("createElement", "h1")
 	title.Set("textContent", "Tagless* Bonsai")
