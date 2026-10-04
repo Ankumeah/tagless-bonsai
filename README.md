@@ -9,9 +9,6 @@
 > Quick question. If anyone has any idea what the "other" language
 up there is, please do tell me on a github issue or something
 
-> [!NOTE]
-> This project is still very much in development
-
 > [!WARNING]
 > I suck at spelling so be prepaired to burn
 your eyes after you see who knows what horrors lie below
@@ -38,3 +35,7 @@ Undoubtably!
 ## Then why did I not use just HTML and javascript?
 
 Because I though it would be cool to use wasm through go
+
+## Why is the bonsai so ugly?
+
+Cus I suck at maths
