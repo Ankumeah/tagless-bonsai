@@ -80,6 +80,11 @@ func setup(this js.Value, args []js.Value) any {
 	document := js.Global().Get("document")
 	body := document.Get("body")
 
+	favicon := document.Call("createElement", "link")
+	favicon.Set("rel", "icon")
+	favicon.Set("type", "image/x-icon")
+	favicon.Set("href", "/favicon.ico")
+
 	title := document.Call("createElement", "h1")
 	title.Set("textContent", "Tagless* Bonsai")
 	title.Get("style").Set("color", "white")
@@ -112,10 +117,8 @@ func setup(this js.Value, args []js.Value) any {
 	output.Get("style").Set("border", "1px solid white")
 	output.Get("style").Set("whiteSpace", "pre")
 
-	body.Call(
-		"append",
-		title, subtitle, reset, output,
-	)
+	body.Call("append", title, subtitle, reset, output)
+  document.Get("head").Call("appendChild", favicon)
 
 	height, width = getDimensions(output)
 
